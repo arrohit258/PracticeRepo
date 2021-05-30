@@ -24,7 +24,7 @@ void buildTree(ll *tree,vi &prefix,int treeNode,int si,int ei){
     tree[treeNode]=min(tree[2*treeNode],tree[2*treeNode+1]);
     
 }
- 
+//LAZY PROPOGATION 
 void updateRange(ll *lazy,ll *tree,int start,int end,int treeNode,int left,int right,int val ){
     if(lazy[treeNode]!=0){
         tree[treeNode]+=lazy[treeNode];
