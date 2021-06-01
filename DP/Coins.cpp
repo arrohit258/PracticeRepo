@@ -10,14 +10,6 @@ typedef vector<ll> vi;
 int mod=1000000007;
 double mul=1.000000000;
 
-ll max(ll a,ll b){
-    if(a>b)return a;
-    return b;
-}
-
-
-
-
 void solve(){
  
 int n;cin>>n;
@@ -34,7 +26,6 @@ for(int i=0;i<=n;i++){
         // probabilty of 0 heads in k turns =(1-p1)*(1-p2)*(1-p3)...*(1-pk)
         else if(i==0) dp[i][j]=(1-p[j-1])*dp[i][j-1]*mul;
        
-        
         else dp[i][j]=0.0;
        
     }
@@ -42,26 +33,19 @@ for(int i=0;i<=n;i++){
 }
 
 for(int h=1;h<=n;h++)
-{for(int j=1;j<=n;j++)
-{if(j>=h)
-    {dp[h][j]=mul*dp[h][j-1]*(1-p[j-1])+mul*dp[h-1][j-1]*p[j-1];
+for(int j=1;j<=n;j++)
+{
+    if(j>=h)
+     dp[h][j]=mul*dp[h][j-1]*(1-p[j-1])+mul*dp[h-1][j-1]*p[j-1];
   
-   }
     if(h>(n/2) && j==n) ans+=dp[h][j];
 
 }
-}
+
 cout<<setprecision(10)<<ans;
-
-
-
-
 
 }
 int main() {
-    int t=1;
-   
-    while(t--)
-    solve();
+   solve();
    return 0;
 }
