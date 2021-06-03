@@ -43,7 +43,8 @@ for(int i=0;i<=k;i++){
 for(int i=2;i<=n;i++){
     
     for(int j=0;j<=k;j++){
-        
+        //dp[i][j] represents giving jcandies to first i students
+          //dp(i,j)=dp(i-1,j)+dp(i-1,j-1)+dp(i-1,j-2)....+dp(i-1,max(0,j-v[i-1]))
         if(j==0)dp[i][j]=1;
        if(j<=v[i-1])
         dp[i][j]=prefix_sum[i-1][j]%mod;
