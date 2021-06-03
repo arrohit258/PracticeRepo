@@ -57,7 +57,6 @@ for(int i=2;i<=n;i++){
     }
 
 }
-
 cout<<dp[n][k];
 
 }
